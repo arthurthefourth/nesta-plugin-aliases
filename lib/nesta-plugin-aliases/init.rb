@@ -15,7 +15,7 @@ module Nesta
         
         def self.build_alias_table
           table = {}
-          Page.find_all().each do |p| 
+          Page.find_all().each do |p|
             dest = p.abspath
             if p.metadata("Redirect To")
               dest = p.metadata("Redirect To")
@@ -29,7 +29,7 @@ module Nesta
         end
         
         def self.normalize(url)
-          return url.gsub("+"," ").downcase #TODO: Normalize url encoding
+          return url.gsub("+"," ").gsub(/\/$/, '').downcase #TODO: Normalize url encoding
         end
       end
     end
@@ -50,7 +50,7 @@ module Nesta
   
     def aliases
       if metadata('aliases')
-        return metadata('aliases').split(/\s+/) # Aliases are separated by whitespaces. Use '+' to represent a space in a URL.
+        return metadata('aliases').gsub(/"/, '').split(/\s+/) # Aliases are separated by whitespaces. Use '+' to represent a space in a URL.
       else
         return []
       end
