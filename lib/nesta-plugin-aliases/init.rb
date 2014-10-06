@@ -29,7 +29,8 @@ module Nesta
         end
         
         def self.normalize(url)
-          return url.gsub("+"," ").gsub(/\/$/, '').downcase #TODO: Normalize url encoding
+          #TODO: Normalize url encoding
+          return url.gsub("+"," ").gsub(/\/$/, '').downcase 
         end
       end
     end
@@ -50,7 +51,8 @@ module Nesta
   
     def aliases
       if metadata('aliases')
-        return metadata('aliases').gsub(/"/, '').split(/\s+/) # Aliases are separated by whitespaces. Use '+' to represent a space in a URL.
+        # Aliases are separated by whitespaces. Use '+' to represent a space in a URL.
+        return metadata('aliases').gsub(/"/, '').split(/\s+/) 
       else
         return []
       end
