@@ -9,13 +9,13 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.authors = ["Nathanael Jones"]
   s.date = "2014-10-02"
-  s.description = "Allows content pages to define alternate urls that will be 302 redirected to them"
+  s.description = "Allows content pages to define alternate urls that will be 301 redirected to them"
   s.email = ["nathanael.jones@gmail.com"]
   s.files = [".gitignore", "Gemfile", "Rakefile", "lib/nesta-plugin-aliases.rb", "lib/nesta-plugin-aliases/init.rb", "lib/nesta-plugin-aliases/version.rb", "nesta-plugin-aliases.gemspec"]
   s.homepage = ""
   s.rubyforge_project = "nesta-plugin-aliases"
   s.rubygems_version = "2.4.1"
-  s.summary = "Allows content pages to define alternate urls that will be 302 redirected to them"
+  s.summary = "Allows content pages to define alternate urls that will be 301 redirected to them"
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
